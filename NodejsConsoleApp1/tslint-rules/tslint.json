@@ -1,0 +1,279 @@
+{
+  "rules": {
+    "align": false,
+    "adjacent-overload-signatures": true,
+    "array-type": {
+      "options": [ "array" ]
+    },
+    "arrow-return-shorthand": {
+      "options": [ "multiline" ]
+    },
+    "arrow-parens": true,
+    "await-promise": false, //requires type info
+    "ban": {
+      "options": [
+        [ "angular", "each", "Don't rely on angular to perform loops. Either use a 'for of' loop or the native 'array.forEach': https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_each" ],
+        [ "jQuery", "each", "Don't rely on jQuery to perform loops. Either use a 'for of' loop or the native 'array.forEach': https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_each" ],
+        [ "$", "each", "Don't rely on jQuery to perform loops. Either use a 'for of' loop or the native 'array.forEach': https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_each" ],
+        [ "_", "each", "Don't rely on Underscore to perform loops. Either use a 'for of' loop or the native 'array.forEach': https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_each" ],
+        [ "_", "forEach", "Don't rely on Underscore to perform loops. Either use a 'for of' loop or the native 'array.forEach': https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_each" ],
+
+        [ "$", "ajax", "Don't rely on jQuery to make AJAX calls. $inject the Angular '$http' service instead" ],
+        [ "jQuery", "ajax", "Don't rely on jQuery to make AJAX calls. $inject the Angular '$http' service instead" ],
+        [ "$", "get", "Don't rely on jQuery to make AJAX calls. $inject the Angular '$http' service instead" ],
+        [ "jQuery", "get", "Don't rely on jQuery to make AJAX calls. $inject the Angular '$http' service instead" ],
+        [ "$", "getJSON", "Don't rely on jQuery to make AJAX calls. $inject the Angular '$http' service instead" ],
+        [ "jQuery", "getJSON", "Don't rely on jQuery to make AJAX calls. $inject the Angular '$http' service instead" ],
+        [ "$", "post", "Don't rely on jQuery to make AJAX calls. $inject the Angular '$http' service instead" ],
+        [ "jQuery", "post", "Don't rely on jQuery to make AJAX calls. $inject the Angular '$http' service instead" ],
+
+        [ "jQuery", "extend", "Don't rely on jQuery to extend an object, use 'angular.merge', 'angular.extend', or 'angular.copy' instead: http://davidcai.github.io/blog/posts/copy-vs-extend-vs-merge" ],
+        [ "$", "extend", "Don't rely on jQuery to extend an object, use 'angular.merge', 'angular.extend', or 'angular.copy' instead: http://davidcai.github.io/blog/posts/copy-vs-extend-vs-merge" ],
+        [ "_", "extend", "Don't rely on Underscore to extend an object, use 'angular.merge', 'angular.extend', or 'angular.copy' instead: http://davidcai.github.io/blog/posts/copy-vs-extend-vs-merge" ],
+        [ "_", "clone", "Don't rely on Underscore to shallow copy an object, either use 'angular.extend' to shallow copy, or 'angular.copy' to deep copy: http://davidcai.github.io/blog/posts/copy-vs-extend-vs-merge" ],
+
+        [ "_", "indexOf", "Use the native 'array.indexOf' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_indexof" ],
+        [ "_", "lastIndexOf", "Use the native 'array.lastIndexOf' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_lastindexof" ],
+
+        [ "_", "every", "Use the native 'array.every' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_every" ],
+        [ "_", "all", "Use the native 'array.every' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_every" ],
+
+        [ "_", "filter", "Use the native 'array.filter' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_filter" ],
+        [ "_", "select", "Use the native 'array.filter' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_filter" ],
+
+        [ "_", "includes", "Use the native 'array.indexOf' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_includes" ],
+        [ "_", "contains", "Use the native 'array.indexOf' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_includes" ],
+
+        [ "_", "map", "Use the native 'array.map' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_map" ],
+        [ "_", "collect", "Use the native 'array.map' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_map" ],
+
+        [ "_", "reduce", "Use the native 'array.reduce' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_reduce" ],
+        [ "_", "inject", "Use the native 'array.reduce' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_reduce" ],
+        [ "_", "foldl", "Use the native 'array.reduce' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_reduce" ],
+        [ "_", "reduceRight", "Use the native 'array.reduceRight' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_reduceright" ],
+        [ "_", "foldr", "Use the native 'array.reduceRight' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_reduceright" ],
+
+        [ "_", "some", "Use the native 'array.some' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_some" ],
+        [ "_", "any", "Use the native 'array.some' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_some" ],
+
+        [ "_", "has", "Use the native 'myObj.hasOwnProperty(\"someProp\")' instead of using the Underscore library" ],
+        [ "_", "keys", "Use the native 'Object.keys(myObj)' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_keys" ],
+        [ "_", "size", "Use the native 'array.length' or 'Object.keys(myObj).length' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_size" ],
+        [ "_", "values", "Use 'Object.keys(obj).map(key => obj[key])' instead of using the Underscore library" ],
+        [ "_", "pluck", "Use the native 'array.map(x => x.prop)' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_pluck" ],
+
+        [ "_", "isString", "Use the native 'typeof someVar == \"string\"' instead of using the Underscore library" ],
+        [ "_", "isBoolean", "Use the native 'typeof someVar == \"boolean\"' instead of using the Underscore library" ],
+        [ "_", "isFunction", "Use the native 'typeof someVar == \"function\"' instead of using the Underscore library" ],
+        [ "_", "isNumber", "Use the native 'typeof someVar == \"number\"' or '!isNaN(someVar)' instead of using the Underscore library" ],
+        [ "_", "isFinite", "Use the native 'someVar == Infinity || someVar == -Infinity' instead of using the Underscore library" ],
+        [ "_", "isNaN", "Use the native '!isNaN(someVar)' instead of using the Underscore library: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_isnan" ],
+        [ "_", "isNull", "Use the native 'someVar == null', or even simpler 'if(!someVar)', instead of using the Underscore library" ],
+        [ "_", "isUndefined", "Use the native 'someVar == undefined', or even simpler 'if(!someVar)', instead of using the Underscore library" ],
+
+        [ "_", "first", "Use the native 'array[0]' instead of using the Underscore library" ],
+        [ "_", "last", "Use the native 'array[array.length - 1]' instead of using the Underscore library" ],
+        [ "_", "union", "Use the native 'array1.concat(array2)' instead of using the Underscore library" ],
+        [ "_", "reverse", "Use the native 'array.reverse' instead of using the Underscore library - https://github.com/cht8687/You-Dont-Need-Lodash-Underscore#_reverse" ],
+        [ "_", "join", "Use the native 'array.join' instead of using the Underscore library - https://github.com/cht8687/You-Dont-Need-Lodash-Underscore#_join" ],
+
+        [ "_", "toUpper", "Use the native 'string.toUpperCase()' instead of using the Underscore library - https://github.com/cht8687/You-Dont-Need-Lodash-Underscore#_reverse" ],
+        [ "_", "toLower", "Use the native 'string.toLowerCase()' instead of using the Underscore library - https://github.com/cht8687/You-Dont-Need-Lodash-Underscore#_tolower" ],
+        [ "_", "trim", "Use the native 'string.trim()' instead of using the Underscore library - https://github.com/cht8687/You-Dont-Need-Lodash-Underscore#_trim" ],
+
+        [ "_", "after", "This can be done natively without using the Underscore library - https://github.com/cht8687/You-Dont-Need-Lodash-Underscore#_after" ],
+
+        //Do not allow these "focus" Jasmine test methods!
+        [ "fdescribe" ],
+        [ "fit" ]
+      ]
+    },
+    "ban-types": {
+      "options": [
+        [ "Object", "Avoid using the `Object` type. Did you mean `object`?" ],
+        [ "Function", "Avoid using the `Function` type. Prefer a specific function type, like `() => void`." ],
+        [ "Boolean", "Avoid using the `Boolean` type. Did you mean `boolean`?" ],
+        [ "Number", "Avoid using the `Number` type. Did you mean `number`?" ],
+        [ "String", "Avoid using the `String` type. Did you mean `string`?" ],
+        [ "Symbol", "Avoid using the `Symbol` type. Did you mean `symbol`?" ]
+      ]
+    },
+    "callable-types": true,
+    "class-name": true,
+    "comment-format": false,
+    "completed-docs": false,
+    "curly": true,
+    "cyclomatic-complexity": {
+      "options": [ 20 ]
+    },
+    "deprecation": false, //requires type info
+    "eofline": false,
+    "encoding": true,
+    "file-header": false,
+    "forin": true,
+    "import-blacklist": false,
+    "import-spacing": false,
+    "indent": [
+      false,
+      "spaces"
+    ],
+    "interface-name": {
+      "options": [ "always-prefix" ]
+    },
+    "interface-over-type-literal": false,
+    "jsdoc-format": false,
+    "label-position": true,
+    "linebreak-style": false,
+    "match-default-export-name": false, //requires type info
+    "max-classes-per-file": false,
+    "max-file-line-count": {
+      "options": [ 300 ]
+    },
+    "max-line-length": {
+      "options": [ 200 ]
+    },
+    "member-access": false,
+    "member-ordering": {
+      "options": { "order": "fields-first" }
+    },
+    "new-parens": true,
+    "newline-before-return": false,
+    "no-angle-bracket-type-assertion": false,
+    "no-any": true,
+    "no-arg": true,
+    "no-bitwise": true,
+    "no-boolean-literal-compare": false, //requires type info
+    "no-conditional-assignment": true,
+    "no-consecutive-blank-lines": {
+      "options": [ 2 ]
+    },
+    "no-console": {
+      //allows console.warn & console.error
+      "options": [ "assert", "clear", "count", "dir", "dirxml", "exception", "group", "groupEnd", "info", "log", "profile", "profileEnd", "table", "timeEnd", "timeStamp", "trace" ]
+    },
+    "no-construct": true,
+    "no-debugger": true,
+    "no-default-export": true,
+    "no-duplicate-super": true,
+    "no-duplicate-variable": true,
+    "no-empty": true,
+    "no-empty-interface": true,
+    "no-eval": true,
+    "no-floating-promises": false, //requires type info
+    "no-for-in-array": false, //requires type info
+    "no-import-side-effect": false,
+    "no-inferrable-types": false,
+    "no-inferred-empty-object-type": false, //requires type info
+    "no-internal-module": true,
+    "no-invalid-template-strings": true,
+    "no-invalid-this": {
+      "options": [ "check-function-in-method" ]
+    },
+    "no-irregular-whitespace": true,
+    "no-magic-numbers": false,
+    "no-mergeable-namespace": false,
+    "no-misused-new": true,
+    "no-namespace": false,
+    "no-non-null-assertion": true, //https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#non-null-assertion-operator
+    "no-null-keyword": true,
+    "no-object-literal-type-assertion": false,
+    "no-parameter-properties": false,
+    "no-reference": false,
+    "no-reference-import": true,
+    "no-require-imports": true,
+    "no-shadowed-variable": true,
+    "no-sparse-arrays": true,
+    "no-string-literal": true,
+    "no-string-throw": true,
+    "no-switch-case-fall-through": true,
+    "no-trailing-whitespace": false,
+    "no-unbound-method": false, //requires type info
+    "no-unnecessary-callback-wrapper": true,
+    "no-unnecessary-initializer": true,
+    "no-unnecessary-qualifier": false, //requires type info
+    "no-unnecessary-type-assertion": false, //requires type info
+    "no-unsafe-any": false, //requires type info
+    "no-unsafe-finally": true,
+    "no-unused-expression": {
+      "options": [ "allow-fast-null-checks" ]
+    },
+    "no-unused-variable": false, //requires type info
+    "no-use-before-declare": false, //requires type info
+    "no-var-keyword": true,
+    "no-var-requires": true,
+    "no-void-expression": false, //requires type info
+    "number-literal-format": false,
+    "object-literal-key-quotes": false,
+    "object-literal-shorthand": false,
+    "object-literal-sort-keys": true,
+    "one-line": {
+      "options": [ "check-open-brace", "check-catch", "check-else", "check-finally", "check-whitespace" ]
+    },
+    "one-variable-per-declaration": {
+      "options": [ "ignore-for-loop" ]
+    },
+    "only-arrow-functions": true,
+    "ordered-imports": false,
+    "prefer-conditional-expression": true,
+    "prefer-const": true,
+    "prefer-for-of": true,
+    "prefer-function-over-method": false,
+    "prefer-method-signature": false,
+    "prefer-object-spread": false,
+    "prefer-switch": false,
+    "prefer-template": {
+      "options": [ "allow-single-concat" ]
+    },
+    "return-undefined": false, //requires type info
+    "promise-function-async": false, //requires type info
+    "quotemark": false,
+    "radix": true,
+    "restrict-plus-operands": false, //requires type info
+    "semicolon": {
+      "options": [ "always", "ignore-interfaces", "ignore-bound-class-methods" ]
+    },
+    "space-before-function-paren": false,
+    "strict-boolean-expressions": false, //requires type info
+    "strict-type-predicates": false, //requires type info
+    "switch-default": true,
+    "trailing-comma": {
+      "options": {
+        "multiline": "never",
+        "singleline": "never"
+      }
+    },
+    "triple-equals": {
+      "options": [ "allow-null-check", "allow-undefined-check" ]
+    },
+    "typedef": {
+      "options": [ "parameter", "arrow-parameter", "object-destructuring", "array-destructuring" ]
+    },
+    "typedef-whitespace": {
+      "options": [
+        {
+          "call-signature": "nospace",
+          "index-signature": "nospace",
+          "parameter": "nospace",
+          "property-declaration": "nospace",
+          "variable-declaration": "nospace"
+        },
+        {
+          "call-signature": "space",
+          "index-signature": "space",
+          "parameter": "space",
+          "property-declaration": "space",
+          "variable-declaration": "space"
+        }
+      ]
+    },
+    "typeof-compare": true,
+    "unified-signatures": true,
+    "use-isnan": true,
+    "variable-name": {
+      "options": [ "check-format", "allow-leading-underscore", "ban-keywords" ]
+    },
+    "whitespace": {
+      "options": [ "check-branch", "check-decl", "check-operator", "check-separator", "check-type" ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "./tslint-rules/tslint.json"
+  ],
+  "rules": {
+    "cyclomatic-complexity": {
+      "options": [ 19 ] //TODO: See if we can lower this even more!
+    },
+    "typedef": {
+      "options": [ "parameter", "arrow-parameter", "object-destructuring", "array-destructuring", "arrow-call-signature", "call-signature" ]
+    },
+    "encoding": false,
+    "prefer-const": false,
+
+    //Enable some type-checked rules
+    "no-boolean-literal-compare": true,
+    "no-cookies": true,
+    "no-floating-promises": true,
+    "no-for-in-array": true,
+    "no-unnecessary-initializer": true,
+    "restrict-plus-operands": true
+  }
+
+}
